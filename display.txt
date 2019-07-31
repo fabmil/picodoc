@@ -1,0 +1,4 @@
+monitor brightness
+
+	xrandr --output DVI-0 --brightness 0.7
+	xrandr --output VGA-0 --brightness 0.6

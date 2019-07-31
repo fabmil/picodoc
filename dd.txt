@@ -1,0 +1,62 @@
+dd
+==
+
+
+----------
+2019-06-22
+----------
+
+Success write iso file 2GB on usbpeb (16GB)
+
+root@pc6:~# time dd if=/home/joe/Downloads/ubuntu-19.04-desktop-amd64.iso of=/dev/sdd bs=64M oflag=dsync
+31+1 records in
+31+1 records out
+2097152000 bytes (2.1 GB, 2.0 GiB) copied, 497.185 s, 4.2 MB/s
+
+real	8m17.191s
+user	0m0.000s
+sys	0m3.768s
+root@pc6:~# ls -la /home/joe/Downloads/ubuntu-19.04-desktop-amd64.iso
+-rw-r--r-- 1 joe joe 2097152000 Jun 22 08:54 /home/joe/Downloads/ubuntu-19.04-desktop-amd64.iso
+
+
+
+
+
+
+
+---> oflag=dsync status=progress
+dd if=/home/joe/Downloads/raspian-strecth/2018-10-09-raspbian-stretch-lite.img of=/dev/sdd bs=4M oflag=dsync status=progress
+
+root@pc6:~# dd if=/home/joe/Downloads/raspian-strecth/2018-10-09-raspbian-stretch-lite.img of=/dev/sdd bs=4M oflag=dsync status=progress
+1866465280 bytes (1.9 GB, 1.7 GiB) copied, 245.23 s, 7.6 MB/s  
+445+0 records in
+445+0 records out
+1866465280 bytes (1.9 GB, 1.7 GiB) copied, 245.392 s, 7.6 MB/s
+
+
+
+
+
+
+root@pc6:~# time dd bs=1M if=~joe/Downloads/raspian-strecth/2018-10-09-raspbian-stretch-lite.img of=/dev/sdd conv=fsync status=progress
+1863319552 bytes (1.9 GB, 1.7 GiB) copied, 217.096 s, 8.6 MB/s  
+1780+0 records in
+1780+0 records out
+1866465280 bytes (1.9 GB, 1.7 GiB) copied, 396.877 s, 4.7 MB/s
+
+real	6m36.889s
+user	0m0.000s
+sys	0m3.368s
+root@pc6:~# time dd bs=1M if=~joe/Downloads/raspian-strecth/2018-10-09-raspbian-stretch-lite.img of=/dev/sdd oflag=direct status=progress
+1865416704 bytes (1.9 GB, 1.7 GiB) copied, 283.137 s, 6.6 MB/s 
+1780+0 records in
+1780+0 records out
+1866465280 bytes (1.9 GB, 1.7 GiB) copied, 283.296 s, 6.6 MB/s
+
+real	4m43.306s
+user	0m0.024s
+sys	0m1.812s
+root@pc6:~# 
+
+

@@ -1,0 +1,12 @@
+1) gem install rake
+
+2) gem install ruby-debug-ide
+
+
+
+
+#
+#install rdebug.ide
+#
+#apt-get install ruby-dev
+

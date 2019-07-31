@@ -1,0 +1,37 @@
+We can check the authoritative DNS servers for a domain by entering something like
+
+
+	1)
+		root@fuji2:~# dig @8.8.8.8 +short NS ti.com
+		;; connection timed out; no servers could be reached
+		root@fuji2:~# dig  +short NS ti.com
+		ns-a.pnap.net.
+		ns-c.pnap.net.
+		ns-d.pnap.net.
+		ns-b.pnap.net.
+		ns.ti.com.
+		ns4.ti.com.
+		ns3.ti.com.
+		ns2.ti.com.
+
+
+	2)
+		root@fuji2:~# dig +short A ti.com
+		198.47.29.34
+
+
+	3)
+		root@fuji2:~# nmap -n -p53 198.47.29.34
+
+		Starting Nmap 6.47 ( http://nmap.org ) at 2016-03-10 14:23 CET
+		Nmap scan report for 198.47.29.34
+		Host is up (0.00091s latency).
+		PORT   STATE    SERVICE
+		53/tcp filtered domain
+
+		Nmap done: 1 IP address (1 host up) scanned in 1.42 seconds
+
+
+	4)
+		root@fuji2:~# dig +short A ddns.net
+		8.23.224.108

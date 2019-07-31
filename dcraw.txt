@@ -1,0 +1,18 @@
+dcraw
+=====
+  
+
+
+192  dcraw dscf3966.raf
+202  dcraw -j -t 0 dscf3966.raf
+207  dcraw -v dscf3966.raf
+209  dcraw -e dscf3966.raf
+216  dcraw -e dscf3966.raf
+219  dcraw dscf3966.raf
+220  dcraw dscf3966.ppm 
+230  dcraw -e dscf3967.raf
+231  dcraw -e dscf3968.raf
+
+
+
+for j in *raf; do echo dcraw ${j%raf}png; done

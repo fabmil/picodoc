@@ -1,0 +1,7 @@
+mysqldump --skip-extended-insert my > my.sql
+
+diff -u my.sql_2016-05-06_21-19-54.FULL.orig my.sql > patch.$(mydate2)
+
+patch --dry-run -o my.2016-05-06_21-43-14 my.sql_2016-05-06_21-19-54.FULL.orig patch.2016-05-06_21-43-14
+
+
