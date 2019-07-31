@@ -1,0 +1,17 @@
+----------------
+2019-06-03 10:03
+----------------
+
+Install APK on Nexus 5X
+
+	list connectd devices
+
+		joe@pc6:~/AndroidStudioProjects/TestKotlin1/app$ adb devices -l
+		List of devices attached
+		00..........ad33       device usb:4-1 product:bullhead model:Nexus_5X device:bullhead
+
+	install apk
+
+		root@pc6:~# adb -d install /home/joe/AndroidStudioProjects/TestKotlin1/app/build/outputs/apk/debug/app-debug.apk 
+		Success
+
