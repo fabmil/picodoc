@@ -1,0 +1,8 @@
+--- 68hc11
+
+m68hc11-as --print-opcodes | less
+m68hc11-as --generate-example | less
+m68hc11-ld --defsym _start=0 p1.o p2.o -o p.elf
+m68hc11-ld p1.o p2.o -o p.elf
+m68hc11-as --print-opcodes
+
