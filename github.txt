@@ -1,0 +1,50 @@
+user@host:~/mycle$ git clone https://github.com/fabmil/picodoc.git
+Cloning into 'picodoc'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+user@host:~/mycle$ mc
+
+user@host:~/mycle/picodoc$ mc
+
+user@host:~/mycle/picodoc$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	68hc11.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+user@host:~/mycle/picodoc$ git add .
+user@host:~/mycle/picodoc$ git commit 
+[master ae4b20c] 68hc11
+ 1 file changed, 8 insertions(+)
+ create mode 100644 68hc11.txt
+user@host:~/mycle/picodoc$ git remote add origin https://github.com/fabmil/picodoc.git
+fatal: remote origin already exists.
+user@host:~/mycle/picodoc$ git remote -v
+origin	https://github.com/fabmil/picodoc.git (fetch)
+origin	https://github.com/fabmil/picodoc.git (push)
+user@host:~/mycle/picodoc$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+user@host:~/mycle/picodoc$ git push origin master
+Username for 'https://github.com': fabmil
+Password for 'https://fabmil@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 374 bytes | 124.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fabmil/picodoc.git
+   cec1cf1..ae4b20c  master -> master
+user@host:~/mycle/picodoc$ 
+
+
